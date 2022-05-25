@@ -1,34 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
+
+import { RodapeComponent } from './rodape/rodape.component';
+import { CabecalhoComponent } from './cabecalho/cabecalho.component';
+import { AbastecimentosComponent } from './abastecimentos/abastecimentos.component';
+import { AbastecimentoComponent } from './abastecimento/abastecimento.component';
+import { VeiculosComponent } from './veiculo/veiculos/veiculos.component';
+import { VeiculoComponent } from './veiculo/veiculo.component';
+import { HomeComponent } from './home/home.component';
+/*import { AbastecimentoModule } from './abastecimento/abastecimento.module';*/
+import { ErrorsModule } from './errors/errors.module';
+import { SobreComponent } from './sobre/sobre.component';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-    ])
-  ],
   declarations: [
     AppComponent,
-    TopBarComponent,
-    ProductListComponent
+    RodapeComponent,
+    CabecalhoComponent,
+    HomeComponent,
+    VeiculoComponent,
+    VeiculosComponent,
+    AbastecimentoComponent,
+    AbastecimentosComponent,
+    SobreComponent
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  imports: [
+    BrowserModule,
+    /*AbastecimentoModule,*/
+    AppRoutingModule,
+    ErrorsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
